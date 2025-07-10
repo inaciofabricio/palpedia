@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpedia</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <section class="header" id="header">
+            <div class="l1" id="headerL1"></div>
+            <div class="l2" id="headerL2"></div>
+            <div class="l3" id="headerL3"></div>
+            <div class="r1" id="headerR1"></div>
+            <div class="r2" id="headerR2"></div>
+            <div class="r3" id="headerR3"></div>
+            <div class="c1"></div>
+            <div class="c2">
+                <div class="c2a" id="headerC2a"></div>
+            </div>
+            <div class="b1"></div>
+            <div class="b2"></div>
+        </section>
+        <section id="main" class="main">
+            <div class="pal" id="pal">
+                <div class="elementos" id="elementos"></div>
+                <div class="detalhes">
+                    <img id="palThumb" class="thumb">
+                    <div class="dados">
+                        <span id="palNome" class="nome"></span>
+                        <span id="palId" class="id"></span>
+                        <div class="qualidade" id="qualidade">
+                            <span class="number" id="qualidadeNumber"></span>
+                            <span class="text" id="qualidadeText"></span>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="trabalhos" id="trabalhos"></div>
+                <img id="iconAnterior" class="anterior">
+                <img id="iconProximo" class="proximo">
+            </div>
+        </section>
+        <section class="footer" id="footer">
+            <div class="l1" id="footerL1"></div>
+            <div class="l2" id="footerL2"></div>
+            <div class="l3" id="footerL3"></div>
+            <div class="r1" id="footerR1"></div>
+            <div class="r2" id="footerR2"></div>
+            <div class="r3" id="footerR3"></div>
+            <div class="c1"></div>
+            <div class="c2">
+                <div class="c2a" id="footerC2a" onclick="openClose()"></div>
+            </div>
+            <div class="b1"></div>
+            <div class="b2"></div>
+        </section>
+    </div>
+    <script src="./assets/js/constants.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

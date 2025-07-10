@@ -1,0 +1,575 @@
+:root {
+    --v1-close: 24.09%;
+    --v1-open: 18.07%;
+    --v2-close: 48.19%;
+    --v2-open: 36.14%;
+    --v3-close: 72.28%;
+    --v3-open: 54.21%;
+
+    --black: #000000;
+    --white: #FFFFFF;
+    --blue-light: #245275;
+    --comum: #7e7e7e;
+    --raro: #6a92ff;
+    --epico: #b963ff;
+    --lendario: #ff9557;
+
+    --tempo-transition: 1s;
+}
+
+/*
+    415 --- 100
+    100 --- x 
+    100 * 100 / 415 = 
+
+    100 75
+    200 150
+    300 225
+
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    max-width: 415px;
+    background-color: #00000010;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: "DM Sans", sans-serif;
+
+    .hidden {
+        display: none;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .header {
+        position: relative;
+        background-color: #0b1d2c;
+        flex-basis: 50%;
+        overflow: hidden;
+        transition: flex-basis var(--tempo-transition) ease; 
+    
+        .l1 {
+            position: absolute;
+            width: var(--v1-close);
+            aspect-ratio: 1/1;
+            border: 10px solid var(--blue-light);
+            border-radius: 50%;
+            margin: calc((var(--v1-close)/2) * -1) 0 0 calc((var(--v1-close)/2) * -1);
+            top: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease; 
+        }
+    
+        .l1.open {
+            width: var(--v1-open);
+            margin: calc((var(--v1-open)/2) * -1) 0 0 calc((var(--v1-open)/2) * -1);
+        }
+    
+        .l2 {
+            position: absolute;
+            width: var(--v2-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: calc((var(--v2-close)/2) * -1) 0 0 calc((var(--v2-close)/2) * -1);
+            top: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease; 
+        }
+    
+        .l2.open {            
+            width: var(--v2-open);
+            margin: calc((var(--v2-open)/2) * -1) 0 0 calc((var(--v2-open)/2) * -1);
+        }
+    
+        .l3 {
+            position: absolute;
+            width: var(--v3-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: calc((var(--v3-close)/2) * -1) 0 0 calc((var(--v3-close)/2) * -1);
+            top: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease; 
+        }
+    
+        .l3.open {
+            width: var(--v3-open);
+            margin: calc((var(--v3-open)/2) * -1) 0 0 calc((var(--v3-open)/2) * -1);
+        }
+    
+        .r1 {
+            position: absolute;
+            width: var(--v1-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: calc((var(--v1-close)/2) * -1) calc((var(--v1-close)/2) * -1) 0 0;
+            top: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease; 
+        }
+    
+        .r1.open {
+            width: var(--v1-open);
+            margin: calc((var(--v1-open)/2) * -1) calc((var(--v1-open)/2) * -1) 0 0;
+        }
+    
+        .r2 {
+            position: absolute;
+            width: var(--v2-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: calc((var(--v2-close)/2) * -1) calc((var(--v2-close)/2) * -1) 0 0;
+            top: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease; 
+        }
+    
+        .r2.open {
+            width: var(--v2-open);
+            margin: calc((var(--v2-open)/2) * -1) calc((var(--v2-open)/2) * -1) 0 0;
+        }
+    
+        .r3 {
+            position: absolute;
+            width: var(--v3-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: calc((var(--v3-close)/2) * -1) calc((var(--v3-close)/2) * -1) 0 0;
+            top: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+    
+        .r3.open {
+            width: var(--v3-open);
+            margin: calc((var(--v3-open)/2) * -1) calc((var(--v3-open)/2) * -1) 0 0;
+        }
+    
+        .c1 {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            background: transparent;
+            border-radius: 50%;
+            border: 15px solid var(--white);
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            bottom: -130px;
+            left: 50%;
+            margin-left: -130px;
+        }
+
+        .c2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: transparent;
+            border-radius: 50%;
+            border: 60px solid #000000;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            bottom: -125px;
+            left: 50%;
+            margin-left: -125px;
+            z-index: 2;
+    
+            .c2a {
+                border: 5px solid var(--white);
+                background-color:  var(--blue-light);
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+        }
+        
+        .b1 {
+            position: absolute;
+            background-color: var(--white);
+            height: 4px;
+            width: 18.5vw;
+            bottom: 0;
+        }
+    
+        .b2 {
+            position: absolute;
+            background-color: var(--white);
+            height: 4px;
+            width: 18.5vw;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .header.open {
+        flex-basis: 18%;
+    }
+
+    .main {
+        z-index: 1;
+        background-color:  var(--blue-light);
+        padding: 0;
+        display: flex;
+        flex-basis: 0%;
+        transition: flex-basis var(--tempo-transition) ease, padding var(--tempo-transition) ease;
+        overflow: hidden;
+
+        .pal {
+            display: none;
+            border-radius: 12px;
+            background-color: #0b1d2c;
+            flex-grow: 1;
+            position: relative;
+            
+            .detalhes {            
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                padding: 50px 0;
+                flex-basis: 60%; 
+                
+                .thumb {
+                    width: 150px;
+                    height: 150px;
+                    border: 4px solid var(--white);
+                    border-radius: 100%;
+                    background-color: #0b1d2c;
+                }
+        
+                .dados {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    text-align: center;
+
+                    .id {
+                        padding: 4px 8px;
+                        border-radius: 8px;
+                        color: var(--white);
+                        font-weight: 600;
+                        font-size: 24px;
+                        background-color: var(--blue-light); 
+                    }
+
+                    .nome {
+                        color: var(--white);
+                        font-weight: 600;
+                        font-size: 28px;
+                        padding: 4px 8px;
+                    }
+
+                    .qualidade {
+                        border-radius: 8px;
+                        color: var(--white);
+                        font-weight: 600;
+                        font-size: 24px;
+                        padding: 4px 8px; 
+
+                        .number {
+                            border-radius: 4px;
+                            padding: 4px;
+                        }
+
+                        .text {
+                            border-radius: 4px;
+                            padding: 4px;
+                        }
+                        
+                    }
+                    
+                    .comum {
+                        background-color: var(--comum);
+                    }
+                    .raro {
+                        background-color: var(--raro);
+                    }
+                    .epico {
+                        background-color: var(--epico);
+                    }
+                    .lendario {
+                        background-color: var(--lendario);
+                    }
+                }
+            }
+        
+            .elementos {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 20%;
+                gap: 8px;
+                padding: 8px;
+        
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        
+            .trabalhos {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 20%;
+                gap: 4px;
+                padding: 8px;
+        
+                .trabalho {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+        
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+            
+                    .nivel {
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: var(--white);
+                    }
+                }
+            }
+
+            .anterior {
+                position: absolute;
+                bottom: 15px;
+                width: 25px;
+                height: 25px;
+                left: 15px;
+                cursor: pointer;
+                border-radius: 50%;
+                border: 1px solid var(--white);
+            }
+
+            .anterior:hover { 
+                width: 35px;
+                height: 35px;
+            }
+
+            .proximo {
+                position: absolute;
+                bottom: 15px;
+                width: 25px;
+                height: 25px;
+                right: 15px;
+                cursor: pointer;
+                border-radius: 50%;
+                border: 1px solid var(--white);
+            }
+
+            .proximo:hover { 
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        .pal.open {
+            display: flex;
+        }
+    }
+
+    .main.open {
+        flex-basis: 64%;
+        padding: 20px 15px;
+    }
+
+    .footer {
+        position: relative;
+        background-color: #0b1d2c;
+        border: none;
+        flex-basis: 50%;
+        transition: flex-basis var(--tempo-transition) ease;
+
+        .l1 {
+            position: absolute;
+            width: var(--v1-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 0 calc((var(--v1-close)/2) * -1) calc((var(--v1-close)/2) * -1);
+            bottom: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+
+        .l1.open {
+            width: var(--v1-open);
+            margin: 0 0 calc((var(--v1-open)/2) * -1) calc((var(--v1-open)/2) * -1);
+        }
+
+        .l2 {
+            position: absolute;
+            width: var(--v2-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 0 calc((var(--v2-close)/2) * -1) calc((var(--v2-close)/2) * -1);
+            bottom: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+
+        .l2.open {
+            width: var(--v2-open);
+            margin: 0 0 calc((var(--v2-open)/2) * -1) calc((var(--v2-open)/2) * -1);
+        }
+
+        .l3 {
+            position: absolute;
+            width: var(--v3-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 0 calc((var(--v3-close)/2) * -1) calc((var(--v3-close)/2) * -1);
+            bottom: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+
+        .l3.open {
+            width: var(--v3-open);
+            margin: 0 0 calc((var(--v3-open)/2) * -1) calc((var(--v3-open)/2) * -1);
+        }
+        
+        .r1 {
+            position: absolute;
+            width: var(--v1-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 calc((var(--v1-close)/2) * -1) calc((var(--v1-close)/2) * -1) 0;
+            bottom: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }   
+
+        .r1.open {
+            width: var(--v1-open);
+            margin: 0 calc((var(--v1-open)/2) * -1) calc((var(--v1-open)/2) * -1) 0;
+        }    
+        
+        .r2 {
+            position: absolute;
+            width: var(--v2-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 calc((var(--v2-close)/2) * -1) calc((var(--v2-close)/2) * -1) 0;
+            bottom: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+
+        .r2.open {
+            width: var(--v2-open);
+            margin: 0 calc((var(--v2-open)/2) * -1) calc((var(--v2-open)/2) * -1) 0;
+        }
+
+        .r3 {
+            position: absolute;
+            width: var(--v3-close);
+            aspect-ratio: 1/1;
+            border: 10px solid  var(--blue-light);
+            border-radius: 100%;
+            margin: 0 calc((var(--v3-close)/2) * -1) calc((var(--v3-close)/2) * -1) 0;
+            bottom: 0;
+            right: 0;
+            transition: margin var(--tempo-transition) ease, width var(--tempo-transition) ease;
+        }
+
+        .r3.open {
+            width: var(--v3-open);
+            margin: 0 calc((var(--v3-open)/2) * -1) calc((var(--v3-open)/2) * -1) 0;
+        }
+
+        .c1 {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            background: transparent;
+            border-radius: 50%;
+            border: 15px solid var(--white);
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-225deg);
+            top: -130px;
+            left: 50%;
+            margin-left: -130px;
+        }
+
+        .c2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 60px solid #000000;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(-225deg);
+            top: -125px;
+            left: 50%;
+            margin-left: -125px;
+            z-index: 2;
+
+            .c2a {
+                width: 100%;
+                height: 100%;
+                border: 5px solid var(--white);
+                background-color:  var(--blue-light);
+                background-image: url("../img/logo.png");
+                transform: rotate(-135deg);
+                background-size: 95%;
+                background-position-x: center;
+                background-position-y: center;
+                background-repeat: no-repeat;
+                border-radius: 100%;
+                cursor: pointer;
+            }
+            .c2a.open {
+                background-image: url("../img/fechar.png");
+            }
+        }
+
+        .b1 {
+            position: absolute;
+            background-color: var(--white);
+            height: 4px;
+            width: 18.5vw;
+            top: 0;
+        }
+
+        .b2 {
+            position: absolute;
+            background-color: var(--white);
+            height: 4px;
+            width: 18.5vw;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .footer.open {
+        flex-basis: 18%;
+    }
+}
+
+
+
+
+
+
