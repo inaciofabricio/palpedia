@@ -14,12 +14,13 @@ Uma enciclopédia web sobre os monstros de Palworld, desenvolvida em HTML5 puro 
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="" alt="Tela inicial" width="45%"/>
-  <img src="" alt="Tela de detalhes" width="45%"/>
-  <img src="" alt="Versão mobile" width="30%"/>
+  <img src="screenshots/captura1.png" alt="Tela inicial" width="30%"/>
+  <img src="screenshots/captura2.png" alt="Tela do pal Lamball" width="30%"/>
+  <img src="screenshots/captura3.png" alt="Tela do pal Anubis" width="30%"/>
 </div>
 
 ## 🛠️ Estrutura do Projeto
+```
 palpedia/
 ├── index.html
 ├── assets/
@@ -28,3 +29,5 @@ palpedia/
 │ └── img/
 ├── screenshots/ 
 └── README.md
+```
+
